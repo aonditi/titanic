@@ -12,7 +12,7 @@ st.title("Titanic Survival Prediction")
 st.write("Enter details of the passenger to predict survival")
 
 #input fields
-pclass=st.selectbox("Passenger Class(1=1st,2=2nd,3=3rd)",[1,2,3])
+pclass=st.selectbox("Passenger Class(1=1st;2=2nd;3=3rd)",[1,2,3])
 sex=st.selectbox("Sex",sex_encoder.classes_)
 age=st.number_input("Age",0,100,30)
 fare=st.number_input("Fare",0.0,600.0,40.0)
@@ -29,8 +29,8 @@ embarked_Q,embarked_S=embarked_map[embarked]
 
 #creating a dataframe for model input
 input_data=pd.DataFrame([{
-    "Pclass":pclass,
-    "sex":sex,
+    "pclass":pclass,
+    "sex":sex_val,
     "age":age,
     "fare":fare,
     "embarked_Q":embarked_Q,
